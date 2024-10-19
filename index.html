@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffde57;
+            text-align: center;
+            color: #333;
+        }
+
+        .header {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 5px 30px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .logo {
+            width: 5%;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .header-image {
+            width: 30%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            margin: 1rem 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 2rem;
+        }
+
+        .highlight {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        ol {
+            li {
+                margin-bottom: 0.7rem;
+            }
+        }
+
+        .instruction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the images horizontally if needed */
+}
+
+        .instruction-img{
+            width: 100%;
+            height: auto;
+        }
+
+        /* Modal styles */
+      /* Modal styles */
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px; /* Adjusted for better fit */
+    max-height: 90vh; /* Ensure it fits within the viewport height */
+    overflow-y: auto; /* Allow vertical scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+    <div class="container">
+        <h1>Project</h1>
+        <p>You are tasked with writing a program to display the total bill to the user after adding tax and subtracting discount. <br>You need to create a function having the following parameters:</p>
+        <ol style="text-align: left; font-size: 1.3rem;">
+            <li><strong>n</strong>: The number of items purchased by the user.</li>
+            <li><strong>tax</strong>: By default, the value should be 0.2 (20%).</li>
+            <li><strong>total</strong>: By default, the value should be 0.</li>
+            <li><strong>items</strong>: The price of all the items purchased, passed as arbitrary arguments. Use recursion to calculate the total price of all items in the same function.</li>
+            <li><strong>discount, shipping_charge, coupon_code</strong>: Passed as arbitrary keyword arguments.</li>
+        </ol>
+    
+        <p><strong>In the function, you need to do the following:</strong></p>
+        <ul style="text-align: left; font-size: 1.3rem;">
+            <li>Find the total by using the concept of recursion.</li>
+            <li>Print the price after applying the discount (if any) to the total.</li>
+            <li>Print the price after applying the coupon code (if any) to the above discounted amount.</li>
+            <li>Print the price after applying the tax to the amount calculated in the above step.</li>
+            <li>Print the final payable amount after applying the shipping charge to the amount calculated in the above step.</li>
+        </ul>
+    
+        <p><strong>Example:</strong></p>
+        <p>If <em>discount</em> is 0.2, it means a 20% discount. <br>If <em>coupon_code</em>=50 that means 20 rupees off.</p>
+    
+        <a href="#" class="button" id="modalBtn">💡 How to share your project with the teacher?</a>
+    
+        <p>👉 <a href="https://colab.research.google.com/drive/1FKR26GziKEsFueh5QD3bIDYZzPdgve3q?usp=sharing" target="_blank" class="button">Let's Start</a></p>
+    </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>How to Share Your Project</h2>
+            <div class="instruction-container">
+            <img src="./images/howtoshareproject/1.png" alt="Step 1" class="instruction-img"/> 
+            <img src="./images/howtoshareproject/2.png" alt="Step 2" class="instruction-img"/>
+            <img src="./images/howtoshareproject/3.png" alt="Step 3" class="instruction-img"/>
+            <img src="./images/howtoshareproject/4.png" alt="Step 4" class="instruction-img"/>
+            <img src="./images/howtoshareproject/5.png" alt="Step 5" class="instruction-img"/>
+            <img src="./images/howtoshareproject/6.png" alt="Step 6" class="instruction-img"/>
+        </div>
+        </div>
+    </div>
+    
+    </div>
+
+    <script>
+        // Get modal and button elements
+// Get modal and button elements
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("modalBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+    modal.style.display = "flex";
+}
+
+// When the user clicks on the close button, close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+    </script>
+</body>
+
+</html>
